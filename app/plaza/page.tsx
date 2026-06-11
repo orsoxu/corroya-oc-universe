@@ -6,7 +6,7 @@ export default function PlazaPage() {
     <PageShell
       eyebrow="Public Room"
       title="广场"
-      intro="广场暂时是静态 mock 展区，用于展示近期公开作品、观展记录和角色宇宙入口。后续可以接入真实社区内容。"
+      intro="广场用于展示近期公开作品、观展记录和角色宇宙入口，是访客进入 Corroya 收藏脉络的第一间公共展室。"
     >
       <div className="grid gap-5 sm:grid-cols-3">
         {artworks.slice(0, 6).map((artwork) => (
@@ -19,7 +19,7 @@ export default function PlazaPage() {
               />
             </div>
             <div className="mt-4 flex items-baseline justify-between gap-4 border-t border-museum-line pt-3">
-              <h2 className="font-display text-2xl">{artwork.title}</h2>
+              <h2 className="font-display text-2xl">{artwork.title || "未命名作品"}</h2>
               <p className="text-right text-[10px] font-bold uppercase tracking-[0.18em] text-museum-muted">
                 {artwork.year}
               </p>

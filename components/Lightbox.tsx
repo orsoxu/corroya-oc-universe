@@ -12,12 +12,14 @@ export function Lightbox({ artwork, onClose }: LightboxProps) {
     return null;
   }
 
+  const title = artwork.title?.trim() || "未命名作品";
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-[#1f1b16]/82 p-4 backdrop-blur-sm sm:p-8"
       role="dialog"
       aria-modal="true"
-      aria-label={`${artwork.title} 大图`}
+      aria-label={`${title} 大图`}
       onClick={onClose}
     >
       <button
@@ -40,7 +42,7 @@ export function Lightbox({ artwork, onClose }: LightboxProps) {
           className="max-h-[78vh] w-full object-contain shadow-print"
         />
         <figcaption className="mt-4 flex items-baseline justify-between gap-4 text-[#e6dfd5]">
-          <span className="font-display text-2xl">{artwork.title}</span>
+          <span className="font-display text-2xl">{title}</span>
           <span className="text-right text-[11px] font-bold uppercase tracking-[0.18em] opacity-75">
             {artwork.arc} · {artwork.year}
           </span>

@@ -8,6 +8,13 @@
   --museum-ink: #2b2824;
   --font-display: "Times New Roman", "Songti SC", "STSong", serif;
   --font-sans: "Avenir Next", "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-worldview: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
+  --worldview-title-color: rgba(43, 40, 36, 0.72);
+  --worldview-text-color: #2b2824;
+  --worldview-light-text-color: rgba(230, 223, 213, 0.62);
+  --worldview-rise-duration: 780ms;
+  --worldview-line-duration: 860ms;
+  --worldview-ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 * {
@@ -33,4 +40,59 @@ a {
 
 ::selection {
   background: rgba(43, 40, 36, 0.18);
+}
+
+.font-worldview {
+  font-family: var(--font-worldview);
+}
+
+.worldview-panel {
+  --worldview-progress: 0;
+  opacity: 0.01;
+  transform: translateY(96px);
+  transition:
+    opacity var(--worldview-rise-duration) var(--worldview-ease),
+    transform var(--worldview-rise-duration) var(--worldview-ease);
+  will-change: opacity, transform;
+}
+
+.worldview-panel.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.worldview-title,
+.worldview-line {
+  opacity: 1;
+  transform: translateY(24px);
+  transition:
+    transform var(--worldview-line-duration) var(--worldview-ease);
+}
+
+.worldview-line {
+  --line-progress: clamp(0, calc((var(--worldview-progress) - var(--line-offset)) / 0.44), 1);
+  color: color-mix(
+    in srgb,
+    var(--worldview-light-text-color),
+    var(--worldview-text-color) calc(var(--line-progress) * 100%)
+  );
+}
+
+.worldview-panel.is-visible .worldview-title,
+.worldview-panel.is-visible .worldview-line {
+  transform: translateY(0);
+}
+
+.worldview-panel.is-visible .worldview-title {
+  transition-delay: 80ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .worldview-panel,
+  .worldview-title,
+  .worldview-line {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

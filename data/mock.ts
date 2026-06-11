@@ -1,6 +1,6 @@
 export type Artwork = {
   id: string;
-  title: string;
+  title?: string;
   arc: string;
   year: string;
   src: string;
@@ -161,4 +161,4 @@ export const characters = [
 ];
 
 export const worldview =
-  "Corroya 的 OC 宇宙是一座由旧档案、潮湿车站、白色雕像和温室梦境组成的私人博物馆。这里的角色并不急着证明自己，他们在缓慢移动的时间里互相留下线索。每一张图像都是一个展柜入口，连接未公开的家族史、地理传说和仍在扩写的关系网。";
+  "这里收藏着 Corroya 的原创角色、约稿作品、世界观碎片与私人藏品。每一张图都是一个角色存在过的证据，也是一座宇宙里被点亮的房间。那些被保存下来的图像，不只是作品，也是角色生活过、被注视过、被认真想象过的痕迹。";

@@ -11,7 +11,7 @@ export default function CuratePage() {
     <PageShell
       eyebrow="Exhibition Draft"
       title="布展"
-      intro="布展页目前是静态 mock 流程，不包含真实上传。它用于展示未来策展工具的基本信息结构。"
+      intro="布展页用于整理作品、展签与世界观章节，呈现一场私人展览从选图到预览的基本节奏。"
     >
       <div className="grid gap-8 sm:grid-cols-[0.8fr_1.2fr]">
         <div className="min-h-[360px] border border-museum-line p-6 sm:p-8">
@@ -22,7 +22,7 @@ export default function CuratePage() {
             Glasshouse Memory
           </h2>
           <p className="mt-8 max-w-sm text-sm leading-7 text-museum-muted">
-            一组关于温室、旧信件和角色自我命名的临时展览。状态为 mock，所有内容均来自前端数据。
+            一组关于温室、旧信件和角色自我命名的临时展览。当前内容用于呈现展览结构与视觉节奏。
           </p>
         </div>
 

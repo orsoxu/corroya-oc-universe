@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+
+// Toggle this front-end-only state to preview signed-out or signed-in navigation.
+const isLoggedIn = true;
 
 const guestLinks = [
   { href: "/plaza", label: "广场" },
@@ -16,8 +18,7 @@ const memberLinks = [
 ];
 
 export function SiteHeader() {
-  const [signedIn, setSignedIn] = useState(false);
-  const links = signedIn ? memberLinks : guestLinks;
+  const links = isLoggedIn ? memberLinks : guestLinks;
 
   return (
     <header className="fixed left-0 right-0 top-0 z-40 px-5 py-4 text-[11px] font-bold uppercase tracking-[0.12em] text-museum-ink sm:px-8 sm:py-5">
@@ -35,13 +36,6 @@ export function SiteHeader() {
         </Link>
 
         <nav className="flex min-w-0 items-center justify-end gap-3 sm:gap-6">
-          <button
-            type="button"
-            onClick={() => setSignedIn((value) => !value)}
-            className="hidden border-b border-museum-line pb-1 text-[10px] font-semibold tracking-[0.16em] text-museum-muted transition hover:text-museum-ink sm:inline"
-          >
-            {signedIn ? "MOCK ON" : "MOCK OFF"}
-          </button>
           <div className="flex items-center gap-3 sm:gap-5">
             {links.map((link) => (
               <Link
