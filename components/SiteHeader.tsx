@@ -21,7 +21,7 @@ export function SiteHeader() {
   const links = isLoggedIn ? memberLinks : guestLinks;
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-40 px-5 py-4 text-[11px] font-bold uppercase tracking-[0.12em] text-museum-ink sm:px-8 sm:py-5">
+    <header className="fixed left-0 right-0 top-0 z-[100] border-b border-museum-line/40 bg-museum-paper/78 px-5 py-4 text-[11px] font-bold uppercase tracking-[0.12em] text-museum-ink backdrop-blur-md sm:px-8 sm:py-5">
       <div className="grid grid-cols-2 items-center gap-y-3 sm:grid-cols-[1fr_auto_1fr]">
         <Link href="/" className="justify-self-start whitespace-nowrap">
           OC MUSEUM

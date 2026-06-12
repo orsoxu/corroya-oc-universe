@@ -47,7 +47,6 @@ a {
 }
 
 .worldview-panel {
-  --worldview-progress: 0;
   opacity: 0.01;
   transform: translateY(96px);
   transition:
@@ -70,12 +69,7 @@ a {
 }
 
 .worldview-line {
-  --line-progress: clamp(0, calc((var(--worldview-progress) - var(--line-offset)) / 0.44), 1);
-  color: color-mix(
-    in srgb,
-    var(--worldview-light-text-color),
-    var(--worldview-text-color) calc(var(--line-progress) * 100%)
-  );
+  color: var(--worldview-text-color);
 }
 
 .worldview-panel.is-visible .worldview-title,

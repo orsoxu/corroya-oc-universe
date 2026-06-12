@@ -1,6 +1,5 @@
 "use client";
 
-import type { CSSProperties } from "react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { worldview } from "@/data/mock";
 
@@ -42,48 +41,11 @@ export function WorldviewSection() {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    const node = sectionRef.current;
-    if (!node) {
-      return;
-    }
-
-    let frame = 0;
-
-    const updateProgress = () => {
-      frame = 0;
-      const rect = node.getBoundingClientRect();
-      const viewportHeight = window.innerHeight || 1;
-      const rawProgress = (viewportHeight * 0.82 - rect.top) / (viewportHeight * 0.78);
-      const progress = Math.min(1, Math.max(0, rawProgress));
-      node.style.setProperty("--worldview-progress", progress.toFixed(3));
-    };
-
-    const requestUpdate = () => {
-      if (frame) {
-        return;
-      }
-      frame = window.requestAnimationFrame(updateProgress);
-    };
-
-    updateProgress();
-    window.addEventListener("scroll", requestUpdate, { passive: true });
-    window.addEventListener("resize", requestUpdate);
-
-    return () => {
-      if (frame) {
-        window.cancelAnimationFrame(frame);
-      }
-      window.removeEventListener("scroll", requestUpdate);
-      window.removeEventListener("resize", requestUpdate);
-    };
-  }, []);
-
   return (
     <section
       ref={sectionRef}
       id="worldview"
-      className={`worldview-panel relative z-30 -mt-[10vh] min-h-screen bg-museum-paper px-6 pb-24 pt-[clamp(8rem,18vh,14rem)] text-museum-ink sm:px-10 ${
+      className={`worldview-panel relative z-10 min-h-screen bg-museum-paper px-6 pb-24 pt-[clamp(8rem,18vh,14rem)] text-museum-ink sm:px-10 ${
         isVisible ? "is-visible" : ""
       }`}
       aria-label="世界观"
@@ -101,15 +63,7 @@ export function WorldviewSection() {
           </h1>
           <div className="mt-10 space-y-5 text-[clamp(1.25rem,2.45vw,2.5rem)] leading-[1.22] sm:mt-14 sm:space-y-7">
             {lines.map((line, index) => (
-              <p
-                key={line}
-                className="worldview-line"
-                style={
-                  {
-                    "--line-offset": `${index * 0.22}`
-                  } as CSSProperties
-                }
-              >
+              <p key={line} className="worldview-line">
                 {line}
               </p>
             ))}

@@ -1,5 +1,6 @@
 import { CharacterCollectionSection } from "@/components/CharacterCollectionSection";
 import { DraggableCanvas } from "@/components/DraggableCanvas";
+import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { WorldviewSection } from "@/components/WorldviewSection";
 
@@ -10,6 +11,7 @@ export default function Home() {
       <DraggableCanvas />
       <WorldviewSection />
       <CharacterCollectionSection />
+      <SiteFooter />
     </main>
   );
 }
