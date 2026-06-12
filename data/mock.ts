@@ -160,5 +160,163 @@ export const characters = [
   }
 ];
 
+export type CharacterGalleryImage = {
+  id: string;
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+};
+
+export type CharacterGallery = {
+  id: string;
+  name: string;
+  summary: string;
+  images: CharacterGalleryImage[];
+};
+
+export const characterGalleries: CharacterGallery[] = [
+  {
+    id: "corroya",
+    name: "Corroya",
+    summary: "私人宇宙的收藏者，也是许多角色档案的第一位目击者。",
+    images: [
+      {
+        id: "corroya-01",
+        src: "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=900&q=80",
+        alt: "Corroya gallery placeholder portrait study",
+        width: 900,
+        height: 1200
+      },
+      {
+        id: "corroya-02",
+        src: "https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=1000&q=80",
+        alt: "Corroya archive placeholder",
+        width: 1000,
+        height: 760
+      },
+      {
+        id: "corroya-03",
+        src: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80",
+        alt: "Corroya room placeholder",
+        width: 900,
+        height: 1120
+      }
+    ]
+  },
+  {
+    id: "aurel",
+    name: "Aurel",
+    summary: "从旧日温室中走出的角色，擅长把沉默和光线一起收藏。",
+    images: [
+      {
+        id: "aurel-01",
+        src: "https://images.unsplash.com/photo-1496507025847-08a80b2e35be?auto=format&fit=crop&w=900&q=80",
+        alt: "Aurel glass placeholder",
+        width: 900,
+        height: 1160
+      },
+      {
+        id: "aurel-02",
+        src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1100&q=80",
+        alt: "Aurel landscape placeholder",
+        width: 1100,
+        height: 740
+      },
+      {
+        id: "aurel-03",
+        src: "https://images.unsplash.com/photo-1484101403633-562f891dc89a?auto=format&fit=crop&w=850&q=80",
+        alt: "Aurel interior placeholder",
+        width: 850,
+        height: 1100
+      }
+    ]
+  },
+  {
+    id: "noctis",
+    name: "Noctis",
+    summary: "夜色、车站与未寄出的信件构成了 Noctis 的行动路线。",
+    images: [
+      {
+        id: "noctis-01",
+        src: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=900&q=80",
+        alt: "Noctis dark architecture placeholder",
+        width: 900,
+        height: 1280
+      },
+      {
+        id: "noctis-02",
+        src: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1100&q=80",
+        alt: "Noctis open field placeholder",
+        width: 1100,
+        height: 760
+      },
+      {
+        id: "noctis-03",
+        src: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=900&q=80",
+        alt: "Noctis paper placeholder",
+        width: 900,
+        height: 1180
+      }
+    ]
+  },
+  {
+    id: "lume",
+    name: "Lume",
+    summary: "Lume 的档案里总有柔和的日光、浅色房间和迟到的回声。",
+    images: [
+      {
+        id: "lume-01",
+        src: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=950&q=80",
+        alt: "Lume sunlit house placeholder",
+        width: 950,
+        height: 1120
+      },
+      {
+        id: "lume-02",
+        src: "https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=1050&q=80",
+        alt: "Lume archive desk placeholder",
+        width: 1050,
+        height: 760
+      },
+      {
+        id: "lume-03",
+        src: "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=850&q=80",
+        alt: "Lume gallery placeholder",
+        width: 850,
+        height: 1180
+      }
+    ]
+  },
+  {
+    id: "vera",
+    name: "Vera",
+    summary: "Vera 负责保存那些尚未命名的藏品，以及角色之间隐约的联系。",
+    images: [
+      {
+        id: "vera-01",
+        src: "https://images.unsplash.com/photo-1484101403633-562f891dc89a?auto=format&fit=crop&w=900&q=80",
+        alt: "Vera chair placeholder",
+        width: 900,
+        height: 1180
+      },
+      {
+        id: "vera-02",
+        src: "https://images.unsplash.com/photo-1496507025847-08a80b2e35be?auto=format&fit=crop&w=1100&q=80",
+        alt: "Vera glass placeholder",
+        width: 1100,
+        height: 820
+      },
+      {
+        id: "vera-03",
+        src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=850&q=80",
+        alt: "Vera path placeholder",
+        width: 850,
+        height: 1120
+      }
+    ]
+  }
+];
+
 export const worldview =
   "这里收藏着 Corroya 的原创角色、约稿作品、世界观碎片与私人藏品。每一张图都是一个角色存在过的证据，也是一座宇宙里被点亮的房间。那些被保存下来的图像，不只是作品，也是角色生活过、被注视过、被认真想象过的痕迹。";
