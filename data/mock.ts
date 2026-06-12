@@ -318,5 +318,171 @@ export const characterGalleries: CharacterGallery[] = [
   }
 ];
 
+export const galleryPrimaryCategories = [
+  {
+    id: "all",
+    label: "全部",
+    secondary: []
+  },
+  {
+    id: "character-art",
+    label: "角色图",
+    secondary: ["头像", "半身", "立绘", "关系图", "服装设定"]
+  },
+  {
+    id: "home-space",
+    label: "家园空间",
+    secondary: ["卧室", "房子", "庄园", "城堡", "工作室", "花园"]
+  },
+  {
+    id: "personal-items",
+    label: "私人物品",
+    secondary: ["衣物", "首饰", "宝石", "武器", "零食", "蛋糕", "纪念品"]
+  },
+  {
+    id: "favorites",
+    label: "喜好收藏",
+    secondary: ["食物", "香味", "植物", "动物", "舒适物"]
+  },
+  {
+    id: "world-fragments",
+    label: "世界观碎片",
+    secondary: ["地点", "阵营", "城市", "神殿", "道具", "事件"]
+  }
+] as const;
+
+export type GalleryPrimaryCategory = (typeof galleryPrimaryCategories)[number]["label"];
+
+export type GalleryImage = {
+  id: string;
+  src: string;
+  alt: string;
+  title?: string;
+  primaryCategory: Exclude<GalleryPrimaryCategory, "全部">;
+  secondaryCategory: string;
+  characterName?: string;
+  width: number;
+  height: number;
+};
+
+export const galleryImages: GalleryImage[] = [
+  {
+    id: "gallery-avatar-corroya",
+    src: "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=900&q=80",
+    alt: "角色头像占位图",
+    title: "Corroya Archive",
+    primaryCategory: "角色图",
+    secondaryCategory: "头像",
+    characterName: "Corroya",
+    width: 900,
+    height: 1200
+  },
+  {
+    id: "gallery-half-aurel",
+    src: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1000&q=80",
+    alt: "角色半身占位图",
+    primaryCategory: "角色图",
+    secondaryCategory: "半身",
+    characterName: "Aurel",
+    width: 1000,
+    height: 1280
+  },
+  {
+    id: "gallery-full-noctis",
+    src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80",
+    alt: "角色立绘占位图",
+    title: "Noctis Route",
+    primaryCategory: "角色图",
+    secondaryCategory: "立绘",
+    characterName: "Noctis",
+    width: 1200,
+    height: 820
+  },
+  {
+    id: "gallery-bedroom",
+    src: "https://images.unsplash.com/photo-1484101403633-562f891dc89a?auto=format&fit=crop&w=1000&q=80",
+    alt: "卧室空间占位图",
+    primaryCategory: "家园空间",
+    secondaryCategory: "卧室",
+    width: 1000,
+    height: 1320
+  },
+  {
+    id: "gallery-house",
+    src: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80",
+    alt: "房子占位图",
+    title: "Summer House",
+    primaryCategory: "家园空间",
+    secondaryCategory: "房子",
+    width: 1200,
+    height: 880
+  },
+  {
+    id: "gallery-garden",
+    src: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1100&q=80",
+    alt: "花园占位图",
+    primaryCategory: "家园空间",
+    secondaryCategory: "花园",
+    width: 1100,
+    height: 760
+  },
+  {
+    id: "gallery-jewelry",
+    src: "https://images.unsplash.com/photo-1496507025847-08a80b2e35be?auto=format&fit=crop&w=900&q=80",
+    alt: "首饰宝石占位图",
+    primaryCategory: "私人物品",
+    secondaryCategory: "首饰",
+    width: 900,
+    height: 1160
+  },
+  {
+    id: "gallery-keepsake",
+    src: "https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=1100&q=80",
+    alt: "纪念品占位图",
+    title: "Kept Object",
+    primaryCategory: "私人物品",
+    secondaryCategory: "纪念品",
+    width: 1100,
+    height: 820
+  },
+  {
+    id: "gallery-plant",
+    src: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=900&q=80",
+    alt: "植物收藏占位图",
+    primaryCategory: "喜好收藏",
+    secondaryCategory: "植物",
+    width: 900,
+    height: 1180
+  },
+  {
+    id: "gallery-food",
+    src: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=80",
+    alt: "食物收藏占位图",
+    primaryCategory: "喜好收藏",
+    secondaryCategory: "食物",
+    width: 1000,
+    height: 760
+  },
+  {
+    id: "gallery-location",
+    src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80",
+    alt: "世界观地点占位图",
+    primaryCategory: "世界观碎片",
+    secondaryCategory: "地点",
+    width: 900,
+    height: 1180
+  },
+  {
+    id: "gallery-temple",
+    src: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1200&q=80",
+    alt: "神殿设定占位图",
+    title: "Quiet Temple",
+    primaryCategory: "世界观碎片",
+    secondaryCategory: "神殿",
+    width: 1200,
+    height: 900
+  }
+];
+
 export const worldview =
   "这里收藏着 Corroya 的原创角色、约稿作品、世界观碎片与私人藏品。每一张图都是一个角色存在过的证据，也是一座宇宙里被点亮的房间。那些被保存下来的图像，不只是作品，也是角色生活过、被注视过、被认真想象过的痕迹。";

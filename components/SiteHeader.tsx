@@ -13,7 +13,7 @@ const guestLinks = [
 const memberLinks = [
   { href: "/#worldview", label: "世界观" },
   { href: "/characters", label: "角色集" },
-  { href: "/#gallery", label: "图集" },
+  { href: "/gallery", label: "图集" },
   { href: "/curate", label: "布展" }
 ];
 

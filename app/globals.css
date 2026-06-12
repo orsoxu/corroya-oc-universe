@@ -96,8 +96,14 @@ a {
   column-gap: 1.25rem;
 }
 
+.gallery-masonry {
+  column-count: 1;
+  column-gap: 1.25rem;
+}
+
 @media (min-width: 640px) {
-  .character-masonry {
+  .character-masonry,
+  .gallery-masonry {
     column-count: 2;
     column-gap: 1.5rem;
   }
@@ -106,5 +112,10 @@ a {
 @media (min-width: 1180px) {
   .character-masonry {
     column-count: 3;
+  }
+
+  .gallery-masonry {
+    column-count: 3;
+    column-gap: 1.65rem;
   }
 }

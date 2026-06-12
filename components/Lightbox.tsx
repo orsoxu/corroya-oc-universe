@@ -1,9 +1,15 @@
 "use client";
 
-import type { Artwork } from "@/data/mock";
+export type LightboxImage = {
+  src: string;
+  alt: string;
+  title?: string;
+  arc?: string;
+  year?: string;
+};
 
 type LightboxProps = {
-  artwork: Artwork | null;
+  artwork: LightboxImage | null;
   onClose: () => void;
 };
 
@@ -13,6 +19,7 @@ export function Lightbox({ artwork, onClose }: LightboxProps) {
   }
 
   const title = artwork.title?.trim() || "未命名作品";
+  const meta = [artwork.arc, artwork.year].filter(Boolean).join(" · ");
 
   return (
     <div
@@ -43,9 +50,11 @@ export function Lightbox({ artwork, onClose }: LightboxProps) {
         />
         <figcaption className="mt-4 flex items-baseline justify-between gap-4 text-[#e6dfd5]">
           <span className="font-display text-2xl">{title}</span>
-          <span className="text-right text-[11px] font-bold uppercase tracking-[0.18em] opacity-75">
-            {artwork.arc} · {artwork.year}
-          </span>
+          {meta ? (
+            <span className="text-right text-[11px] font-bold uppercase tracking-[0.18em] opacity-75">
+              {meta}
+            </span>
+          ) : null}
         </figcaption>
       </figure>
     </div>
