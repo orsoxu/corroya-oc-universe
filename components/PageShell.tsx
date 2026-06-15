@@ -21,7 +21,7 @@ export function PageShell({
       <SiteHeader />
       <section className="mx-auto max-w-6xl">
         <div
-          className={`mb-12 grid gap-8 border-y border-museum-line py-8 sm:py-10 ${
+          className={`mb-12 grid gap-8 border-y border-museum-line py-10 sm:py-12 ${
             centeredHeader
               ? "justify-items-center text-center"
               : "sm:grid-cols-[0.55fr_1fr]"
@@ -29,7 +29,7 @@ export function PageShell({
         >
           {eyebrow ? (
             <p
-              className={`text-[11px] font-bold uppercase tracking-[0.24em] text-museum-muted ${
+              className={`text-ui-label uppercase text-museum-muted ${
                 centeredHeader ? "text-center" : ""
               }`}
             >
@@ -37,11 +37,11 @@ export function PageShell({
             </p>
           ) : null}
           <div className={centeredHeader ? "mx-auto" : ""}>
-            <h1 className="font-display text-[clamp(2.8rem,8vw,7.4rem)] font-medium leading-[0.88] tracking-[-0.01em]">
+            <h1 className="text-page-title">
               {title}
             </h1>
             <p
-              className={`mt-6 max-w-2xl text-sm leading-7 text-museum-muted sm:text-base ${
+              className={`mt-6 max-w-2xl text-muted-copy ${
                 centeredHeader ? "mx-auto" : ""
               }`}
             >
@@ -52,7 +52,7 @@ export function PageShell({
         {children}
         <Link
           href="/"
-          className="mt-14 inline-flex border-b border-museum-ink pb-1 text-[11px] font-bold uppercase tracking-[0.18em] transition hover:text-museum-muted"
+          className="mt-14 inline-flex border border-museum-ink px-4 py-2 text-ui-label uppercase transition hover:bg-museum-ink hover:text-museum-paper"
         >
           返回展厅
         </Link>

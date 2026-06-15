@@ -32,20 +32,20 @@ const relationships = [
 
 function FieldLabel({ children }: { children: React.ReactNode }) {
   return (
-    <label className="block text-[11px] font-bold tracking-[0.18em] text-museum-muted">
+    <label className="block text-ui-label text-museum-muted">
       {children}
     </label>
   );
 }
 
 const fieldClass =
-  "mt-2 w-full border border-museum-line bg-museum-paper/35 px-4 py-3 text-sm text-museum-ink outline-none transition placeholder:text-museum-muted/70 focus:border-museum-ink";
+  "mt-2 w-full border border-museum-line bg-museum-paper/35 px-4 py-3 text-body-copy text-museum-ink outline-none transition placeholder:text-museum-muted/70 focus:border-museum-ink";
 
 const quietButtonClass =
-  "border border-museum-line px-4 py-2 text-[11px] font-bold tracking-[0.16em] text-museum-muted transition hover:border-museum-ink hover:text-museum-ink";
+  "border border-museum-line px-4 py-2 text-ui-label text-museum-muted transition hover:border-museum-ink hover:text-museum-ink";
 
 const strongButtonClass =
-  "border border-museum-ink px-5 py-3 text-[11px] font-bold tracking-[0.18em] transition hover:bg-museum-ink hover:text-museum-paper";
+  "border border-museum-ink px-5 py-3 text-ui-label transition hover:bg-museum-ink hover:text-museum-paper";
 
 export default function CuratePage() {
   const [activeTab, setActiveTab] = useState<(typeof tabs)[number]>("上传");
@@ -81,7 +81,7 @@ export default function CuratePage() {
               key={tab}
               type="button"
               onClick={() => setActiveTab(tab)}
-              className={`shrink-0 border-b px-1 pb-3 text-sm font-bold tracking-[0.18em] transition ${
+              className={`shrink-0 border-b px-1 pb-3 text-ui-label transition ${
                 isActive
                   ? "border-museum-ink text-museum-ink"
                   : "border-transparent text-museum-muted hover:text-museum-ink"
@@ -97,10 +97,10 @@ export default function CuratePage() {
         <section className="grid gap-7" aria-label="上传作品">
           <div className="border border-museum-line bg-museum-ink/[0.025] p-5 sm:p-6">
             <div className="flex min-h-[180px] flex-col items-center justify-center border border-museum-line/75 px-6 py-9 text-center sm:min-h-[220px]">
-              <p className="font-display text-[clamp(2.25rem,5vw,4.6rem)] leading-none">
+              <p className="text-section-title">
                 上传图片
               </p>
-              <p className="mt-5 text-sm leading-7 text-museum-ink">
+              <p className="mt-5 text-body-copy text-museum-ink">
                 拖拽图片到这里，或点击选择文件
               </p>
             </div>
@@ -109,7 +109,7 @@ export default function CuratePage() {
           <div className="border border-museum-line p-6 sm:p-8">
             <div className="grid gap-8 lg:grid-cols-2">
               <section aria-label="必填项">
-                <h2 className="font-display text-3xl leading-none">必填项</h2>
+                <h2 className="text-section-title">必填项</h2>
                 <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
                   <div>
                     <FieldLabel>所属角色</FieldLabel>
@@ -134,8 +134,8 @@ export default function CuratePage() {
                     <label className="mt-3 flex items-start gap-4 border border-museum-line bg-museum-ink/[0.02] p-4">
                       <input type="checkbox" className="mt-1 accent-museum-ink" />
                       <span>
-                        <span className="block text-sm text-museum-ink">置顶展示到首页展厅</span>
-                        <span className="mt-1 block text-xs leading-6 text-museum-muted">
+                        <span className="block text-body-copy text-museum-ink">置顶展示到首页展厅</span>
+                        <span className="mt-1 block text-muted-copy">
                           开启后，这张图会出现在首页第一屏可拖拽展厅中
                         </span>
                       </span>
@@ -155,8 +155,8 @@ export default function CuratePage() {
 
               <section className="border-t border-museum-line/70 pt-8 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0" aria-label="非必填项">
                 <div>
-                  <h2 className="font-display text-3xl leading-none">非必填项</h2>
-                  <p className="mt-2 text-xs leading-6 text-museum-muted">
+                  <h2 className="text-section-title">非必填项</h2>
+                  <p className="mt-2 text-muted-copy">
                     可稍后补充，不会影响上传。
                   </p>
                 </div>
@@ -212,7 +212,7 @@ export default function CuratePage() {
                     key={character.id}
                     type="button"
                     onClick={() => setActiveCharacterId(character.id)}
-                    className={`shrink-0 border-l px-4 py-3 text-left font-display text-3xl leading-none transition lg:block lg:w-full ${
+                    className={`shrink-0 border-l px-4 py-3 text-left text-card-title transition lg:block lg:w-full ${
                       isActive
                         ? "border-museum-ink bg-museum-ink/[0.035] text-museum-ink"
                         : "border-museum-line text-museum-muted hover:border-museum-muted hover:text-museum-ink"
@@ -224,7 +224,7 @@ export default function CuratePage() {
               })}
               <button
                 type="button"
-                className="shrink-0 border-l border-museum-line px-4 py-3 text-left text-sm font-bold tracking-[0.16em] text-museum-muted transition hover:border-museum-ink hover:text-museum-ink lg:block lg:w-full"
+                className="shrink-0 border-l border-museum-line px-4 py-3 text-left text-ui-label text-museum-muted transition hover:border-museum-ink hover:text-museum-ink lg:block lg:w-full"
               >
                 + 新增角色
               </button>
@@ -247,10 +247,10 @@ export default function CuratePage() {
                 </div>
               </div>
               <div className="border border-museum-line p-5">
-                <p className="text-[11px] font-bold tracking-[0.18em] text-museum-muted">
+                <p className="text-ui-label text-museum-muted">
                   作品数量
                 </p>
-                <p className="mt-7 font-display text-6xl leading-none">
+                <p className="mt-7 text-page-title">
                   {String(activeCharacter?.images.length ?? 0).padStart(2, "0")}
                 </p>
               </div>
@@ -258,8 +258,8 @@ export default function CuratePage() {
 
             <section className="border-y border-museum-line py-6">
               <div className="mb-5 flex items-center justify-between gap-4">
-                <h2 className="font-display text-4xl leading-none">图片列表</h2>
-                <span className="text-xs font-bold tracking-[0.18em] text-museum-muted">
+                <h2 className="text-section-title">图片列表</h2>
+                <span className="text-ui-label text-museum-muted">
                   静态演示
                 </span>
               </div>
@@ -278,7 +278,7 @@ export default function CuratePage() {
                       className="h-24 w-24 border border-museum-line object-cover"
                     />
                     <div className="min-w-0">
-                      <div className="grid gap-3 text-xs text-museum-muted sm:grid-cols-3">
+                      <div className="grid gap-3 text-muted-copy sm:grid-cols-3">
                         <p>
                           <span className="block text-museum-muted/70">分类</span>
                           <span className="mt-1 block text-museum-ink">
@@ -311,7 +311,7 @@ export default function CuratePage() {
 
             <section className="border border-museum-line p-6 sm:p-8">
               <div className="flex items-center justify-between gap-4">
-                <h2 className="font-display text-4xl leading-none">角色关系</h2>
+                <h2 className="text-section-title">角色关系</h2>
                 <button
                   type="button"
                   onClick={() =>
@@ -330,18 +330,18 @@ export default function CuratePage() {
                 {relationships.map((relation) => (
                   <article
                     key={`${relation.character}-${relation.type}`}
-                    className="grid gap-4 py-5 text-sm lg:grid-cols-[0.42fr_0.42fr_1fr_auto]"
+                    className="grid gap-4 py-5 text-body-copy lg:grid-cols-[0.42fr_0.42fr_1fr_auto]"
                   >
                     <p>
-                      <span className="block text-xs text-museum-muted">关联角色</span>
+                      <span className="block text-muted-copy">关联角色</span>
                       <span className="mt-1 block">{relation.character}</span>
                     </p>
                     <p>
-                      <span className="block text-xs text-museum-muted">关系类型</span>
+                      <span className="block text-muted-copy">关系类型</span>
                       <span className="mt-1 block">{relation.type}</span>
                     </p>
                     <p>
-                      <span className="block text-xs text-museum-muted">关系说明</span>
+                      <span className="block text-muted-copy">关系说明</span>
                       <span className="mt-1 block leading-7">{relation.note}</span>
                     </p>
                     <div className="flex gap-2 lg:justify-end">
@@ -440,12 +440,12 @@ export default function CuratePage() {
       {activeTab === "世界观" ? (
         <section className="grid gap-7 lg:grid-cols-[1fr_280px]" aria-label="世界观编辑">
           <div className="border border-museum-line p-6 sm:p-8">
-            <h2 className="font-display text-5xl leading-none">简单编辑</h2>
-            <p className="mt-4 max-w-xl text-sm leading-7 text-museum-muted">
+            <h2 className="text-section-title">简单编辑</h2>
+            <p className="mt-4 max-w-xl text-muted-copy">
               适合只想写一段世界观简介的用户
             </p>
             <textarea
-              className={`${fieldClass} mt-7 min-h-[360px] resize-none font-worldview text-lg leading-9 sm:text-xl`}
+              className={`${fieldClass} mt-7 min-h-[360px] resize-none font-worldview text-body-copy`}
               defaultValue={worldview}
             />
             <div className="mt-6 flex justify-end">
@@ -456,17 +456,17 @@ export default function CuratePage() {
           </div>
 
           <aside className="border border-museum-line bg-museum-ink/[0.025] p-6 opacity-55">
-            <p className="text-[11px] font-bold tracking-[0.18em] text-museum-muted">
+            <p className="text-ui-label text-museum-muted">
               暂未开放
             </p>
-            <h3 className="mt-5 font-display text-4xl leading-none">详细编辑</h3>
-            <p className="mt-5 text-sm leading-7 text-museum-muted">
+            <h3 className="mt-5 text-section-title">详细编辑</h3>
+            <p className="mt-5 text-muted-copy">
               后续可拆分章节、阵营、地点、事件与角色关系。
             </p>
             <button
               type="button"
               disabled
-              className="mt-8 cursor-not-allowed border border-museum-line px-4 py-3 text-[11px] font-bold tracking-[0.18em] text-museum-muted"
+              className="mt-8 cursor-not-allowed border border-museum-line px-4 py-3 text-ui-label text-museum-muted"
             >
               详细编辑（暂未开放）
             </button>

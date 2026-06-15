@@ -4,13 +4,39 @@
 
 :root {
   color-scheme: light;
-  --museum-paper: #b8afa4;
-  --museum-ink: #2b2824;
-  --font-display: "Times New Roman", "Songti SC", "STSong", serif;
-  --font-sans: "Avenir Next", "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --oc-paper: #b8afa4;
+  --oc-paper-light: #c7beb2;
+  --oc-parchment: #d7d0c5;
+  --oc-card: rgba(43, 40, 36, 0.035);
+  --oc-card-soft: rgba(230, 223, 213, 0.22);
+  --oc-ink: #2b2824;
+  --oc-ink-soft: rgba(43, 40, 36, 0.72);
+  --oc-muted: #746d64;
+  --oc-faint: rgba(43, 40, 36, 0.48);
+  --oc-line: rgba(43, 40, 36, 0.22);
+  --oc-line-strong: rgba(43, 40, 36, 0.44);
+  --oc-header-bg: rgba(184, 175, 164, 0.86);
+  --radius-card: 0px;
+  --radius-panel: 0px;
+  --radius-control: 0px;
+  --radius-pill: 0px;
+  --shadow-print: 0 18px 48px rgba(49, 41, 34, 0.1);
+  --text-hero-title: clamp(4rem, 9vw, 8rem);
+  --text-page-title: clamp(3rem, 6vw, 5.5rem);
+  --text-section-title: clamp(2rem, 3.5vw, 3rem);
+  --text-card-title: clamp(1.25rem, 2vw, 1.75rem);
+  --text-body: clamp(1rem, 1.2vw, 1.125rem);
+  --text-muted: clamp(0.875rem, 1vw, 1rem);
+  --text-label: clamp(0.875rem, 0.95vw, 0.95rem);
+  --leading-cn-body: 1.78;
+  --leading-cn-title: 1.08;
+  --museum-paper: var(--oc-paper);
+  --museum-ink: var(--oc-ink);
+  --font-display: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
+  --font-sans: "Inter", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   --font-worldview: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
-  --worldview-title-color: rgba(43, 40, 36, 0.72);
-  --worldview-text-color: #2b2824;
+  --worldview-title-color: var(--oc-ink-soft);
+  --worldview-text-color: var(--oc-ink);
   --worldview-light-text-color: rgba(230, 223, 213, 0.62);
   --worldview-rise-duration: 780ms;
   --worldview-line-duration: 860ms;
@@ -28,8 +54,11 @@ body {
 
 body {
   margin: 0;
-  background: var(--museum-paper);
-  color: var(--museum-ink);
+  background:
+    linear-gradient(180deg, rgba(230, 223, 213, 0.08), rgba(43, 40, 36, 0.02)),
+    var(--oc-paper);
+  color: var(--oc-ink);
+  font-weight: 400;
   overflow-x: hidden;
 }
 
@@ -44,6 +73,156 @@ a {
 
 .font-worldview {
   font-family: var(--font-worldview);
+}
+
+.text-hero-title {
+  font-family: var(--font-display);
+  font-size: min(var(--text-hero-title), 4.5rem);
+  font-weight: 400;
+  line-height: var(--leading-cn-title);
+  letter-spacing: 0;
+}
+
+.text-page-title {
+  font-family: var(--font-display);
+  font-size: var(--text-page-title);
+  font-weight: 400;
+  line-height: var(--leading-cn-title);
+  letter-spacing: 0;
+}
+
+.text-section-title {
+  font-family: var(--font-display);
+  font-size: var(--text-section-title);
+  font-weight: 400;
+  line-height: 1.16;
+  letter-spacing: 0;
+}
+
+.text-card-title {
+  font-family: var(--font-display);
+  font-size: var(--text-card-title);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.text-body-copy {
+  font-size: var(--text-body);
+  line-height: var(--leading-cn-body);
+  font-weight: 400;
+}
+
+.text-muted-copy {
+  font-size: var(--text-muted);
+  line-height: 1.75;
+  font-weight: 400;
+  color: var(--oc-muted);
+}
+
+.text-ui-label {
+  font-size: var(--text-label);
+  line-height: 1.45;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.bg-museum-paper {
+  background-color: var(--oc-paper) !important;
+}
+
+.bg-museum-wash {
+  background-color: var(--oc-paper-light) !important;
+}
+
+.bg-museum-paper\/35 {
+  background-color: var(--oc-card-soft) !important;
+}
+
+.bg-museum-ink\/\[0\.02\],
+.bg-museum-ink\/\[0\.025\],
+.bg-museum-ink\/\[0\.035\] {
+  background-color: var(--oc-card) !important;
+}
+
+.text-museum-ink {
+  color: var(--oc-ink) !important;
+}
+
+.text-museum-muted,
+.text-museum-muted\/70,
+.text-museum-muted\/78 {
+  color: var(--oc-muted) !important;
+}
+
+.border-museum-line,
+.border-museum-line\/40,
+.border-museum-line\/60,
+.border-museum-line\/70,
+.border-museum-line\/75,
+.border-museum-line\/80 {
+  border-color: var(--oc-line) !important;
+}
+
+.border-museum-ink {
+  border-color: var(--oc-line-strong) !important;
+}
+
+.shadow-print {
+  box-shadow: var(--shadow-print) !important;
+}
+
+input,
+select,
+textarea {
+  border-radius: var(--radius-control);
+  background-color: var(--oc-card-soft);
+  font-size: var(--text-body);
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--oc-faint);
+}
+
+select {
+  appearance: none;
+  padding-right: 4.5rem !important;
+  background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.5 7L9 11.5L13.5 7' stroke='%232B2824' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 2.65rem center;
+  background-size: 18px 18px;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+button.border,
+a.border {
+  border-radius: var(--radius-pill);
+}
+
+.border.border-museum-line,
+.border.border-museum-ink {
+  border-radius: var(--radius-card);
+}
+
+.gallery-masonry img,
+.character-masonry img {
+  border-radius: 0;
+  box-shadow: var(--shadow-print);
+}
+
+@media (min-width: 768px) {
+  .text-hero-title {
+    font-size: var(--text-hero-title);
+  }
 }
 
 .worldview-panel {

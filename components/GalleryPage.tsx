@@ -42,10 +42,10 @@ export function GalleryPage() {
     <main className="min-h-screen bg-museum-paper px-5 pb-24 pt-32 text-museum-ink sm:px-8 sm:pt-36">
       <section className="mx-auto grid max-w-[1500px] gap-10 lg:grid-cols-[280px_1fr] lg:gap-16">
         <aside className="lg:sticky lg:top-32 lg:h-[calc(100vh-9rem)] lg:self-start">
-          <h1 className="font-display text-[clamp(3rem,8vw,7.5rem)] leading-none tracking-[0.03em]">
+          <h1 className="text-page-title">
             图集
           </h1>
-          <p className="mt-5 max-w-sm text-sm leading-7 text-museum-muted">
+          <p className="mt-5 max-w-sm text-muted-copy">
             所有角色、场景、藏品与世界观碎片，都被安放在这里。
           </p>
 
@@ -61,7 +61,7 @@ export function GalleryPage() {
                     <button
                       type="button"
                       onClick={() => selectPrimary(category.label)}
-                      className={`block w-full border-l py-2 pl-4 pr-2 text-left text-sm tracking-[0.16em] transition ${
+                      className={`block w-full border-l py-2 pl-4 pr-2 text-left text-ui-label transition ${
                         isActive
                           ? "border-museum-ink bg-museum-ink/[0.035] text-museum-ink"
                           : "border-museum-line text-museum-muted hover:border-museum-muted hover:text-museum-ink"
@@ -85,7 +85,7 @@ export function GalleryPage() {
                                 setExpandedPrimary(category.label);
                                 setActiveSecondary(secondary);
                               }}
-                              className={`block w-full border-l py-1.5 pl-4 pr-2 text-left text-xs tracking-[0.12em] transition ${
+                              className={`block w-full border-l py-1.5 pl-4 pr-2 text-left text-ui-label transition ${
                                 isSecondaryActive
                                   ? "border-museum-ink text-museum-ink"
                                   : "border-transparent text-museum-muted/78 hover:border-museum-muted/55 hover:text-museum-ink"
@@ -105,7 +105,7 @@ export function GalleryPage() {
         </aside>
 
         <section aria-label="图集图片" className="min-w-0">
-          <div className="mb-5 flex items-center justify-between border-b border-museum-line/60 pb-3 text-[11px] font-bold tracking-[0.2em] text-museum-muted">
+          <div className="mb-5 flex items-center justify-between border-b border-museum-line/60 pb-3 text-ui-label text-museum-muted">
             <span>{activeSecondary ?? activePrimary}</span>
             <span>{String(filteredImages.length).padStart(2, "0")}</span>
           </div>
@@ -126,7 +126,7 @@ export function GalleryPage() {
                   className="h-auto w-full border border-museum-line object-contain shadow-[0_18px_48px_rgba(49,41,34,0.1)] transition duration-300 ease-out group-hover:opacity-90 group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-offset-4 group-focus-visible:outline-museum-ink"
                 />
                 {(image.title || image.characterName) ? (
-                  <p className="mt-2 flex items-center justify-between gap-3 text-xs leading-5 text-museum-muted">
+                  <p className="mt-2 flex items-center justify-between gap-3 text-muted-copy">
                     <span>{image.title ?? "未命名作品"}</span>
                     {image.characterName ? <span>{image.characterName}</span> : null}
                   </p>

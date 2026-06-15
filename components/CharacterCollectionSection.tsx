@@ -17,7 +17,7 @@ export function CharacterCollectionSection() {
     >
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[minmax(220px,0.34fr)_1fr] lg:gap-16">
         <aside className="lg:sticky lg:top-28 lg:self-start">
-          <p className="mb-7 text-[11px] font-bold tracking-[0.24em] text-museum-muted">
+          <p className="mb-7 text-ui-label text-museum-muted">
             角色集
           </p>
 
@@ -30,7 +30,7 @@ export function CharacterCollectionSection() {
                   key={character.id}
                   type="button"
                   onClick={() => setActiveId(character.id)}
-                  className={`shrink-0 whitespace-nowrap border-b px-1 pb-2 text-left font-display text-3xl leading-none transition lg:block lg:w-full lg:border-b-0 lg:border-l lg:py-3 lg:pl-5 lg:pr-0 lg:text-5xl ${
+                  className={`shrink-0 whitespace-nowrap border-b px-1 pb-2 text-left text-card-title transition lg:block lg:w-full lg:border-b-0 lg:border-l lg:py-3 lg:pl-5 lg:pr-0 ${
                     isActive
                       ? "border-museum-ink text-museum-ink"
                       : "border-museum-line text-museum-muted hover:border-museum-muted hover:text-museum-ink"
@@ -42,14 +42,14 @@ export function CharacterCollectionSection() {
             })}
           </div>
 
-          <p className="mt-7 hidden max-w-xs text-sm leading-7 text-museum-muted lg:block">
+          <p className="mt-7 hidden max-w-xs text-muted-copy lg:block">
             {activeCharacter.summary}
           </p>
         </aside>
 
         <div>
           <div className="mb-7 lg:hidden">
-            <p className="text-sm leading-7 text-museum-muted">{activeCharacter.summary}</p>
+            <p className="text-muted-copy">{activeCharacter.summary}</p>
           </div>
 
           <div className="character-masonry">

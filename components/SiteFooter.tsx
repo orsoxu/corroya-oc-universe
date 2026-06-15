@@ -38,7 +38,7 @@ export function SiteFooter() {
             <path d="M12 9h.01" />
             <path d="M15 10h.01" />
           </svg>
-          <span className="text-[11px] font-bold tracking-[0.22em]">OC MUSEUM</span>
+          <span className="text-ui-label">OC MUSEUM</span>
         </div>
 
         <button
@@ -62,7 +62,7 @@ export function SiteFooter() {
             <path d="M5 11v8h8" />
           </svg>
           <span
-            className={`absolute right-0 top-[-1.7rem] whitespace-nowrap text-[11px] font-bold tracking-[0.12em] text-museum-muted transition ${
+            className={`absolute right-0 top-[-1.9rem] whitespace-nowrap text-ui-label text-museum-muted transition ${
               copied ? "opacity-100" : "pointer-events-none opacity-0"
             }`}
           >

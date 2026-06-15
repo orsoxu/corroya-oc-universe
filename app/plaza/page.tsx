@@ -19,8 +19,8 @@ export default function PlazaPage() {
               />
             </div>
             <div className="mt-4 flex items-baseline justify-between gap-4 border-t border-museum-line pt-3">
-              <h2 className="font-display text-2xl">{artwork.title || "未命名作品"}</h2>
-              <p className="text-right text-[10px] font-bold uppercase tracking-[0.18em] text-museum-muted">
+              <h2 className="text-card-title">{artwork.title || "未命名作品"}</h2>
+              <p className="text-right text-ui-label uppercase text-museum-muted">
                 {artwork.year}
               </p>
             </div>

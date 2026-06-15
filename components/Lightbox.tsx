@@ -49,9 +49,9 @@ export function Lightbox({ artwork, onClose }: LightboxProps) {
           className="max-h-[78vh] w-full object-contain shadow-print"
         />
         <figcaption className="mt-4 flex items-baseline justify-between gap-4 text-[#e6dfd5]">
-          <span className="font-display text-2xl">{title}</span>
+          <span className="text-card-title text-[#e6dfd5]">{title}</span>
           {meta ? (
-            <span className="text-right text-[11px] font-bold uppercase tracking-[0.18em] opacity-75">
+            <span className="text-right text-ui-label uppercase opacity-75">
               {meta}
             </span>
           ) : null}

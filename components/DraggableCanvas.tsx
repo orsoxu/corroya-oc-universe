@@ -97,7 +97,7 @@ export function DraggableCanvas() {
                 draggable={false}
                 className="h-full w-full object-cover shadow-[0_18px_42px_rgba(49,41,34,0.12)] transition duration-300 group-hover:scale-[1.018] group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-offset-4 group-focus-visible:outline-museum-ink"
               />
-              <span className="pointer-events-none absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 bg-[#e6dfd5]/82 px-3 py-1 text-[10px] font-bold tracking-[0.18em] text-museum-ink opacity-0 backdrop-blur-sm transition group-hover:opacity-100 sm:block">
+              <span className="pointer-events-none absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 bg-[#e6dfd5]/82 px-3 py-1 text-ui-label text-museum-ink opacity-0 backdrop-blur-sm transition group-hover:opacity-100 sm:block">
                 查看
               </span>
             </button>
@@ -106,14 +106,14 @@ export function DraggableCanvas() {
 
         <div
           id="gallery-intro"
-          className="pointer-events-none absolute bottom-10 left-1/2 z-20 w-[min(760px,calc(100%-40px))] -translate-x-1/2 text-center font-display text-[clamp(1.08rem,2vw,1.5rem)] leading-[1.08] text-museum-ink sm:bottom-12"
+          className="pointer-events-none absolute bottom-10 left-1/2 z-20 w-[min(760px,calc(100%-40px))] -translate-x-1/2 text-center font-display text-card-title text-museum-ink sm:bottom-12"
         >
           <p className="line-clamp-2">
             这里收藏着 Corroya 的原创角色、约稿作品、世界观碎片与私人藏品。每一张图都是一个角色存在过的证据，也是一座宇宙里被点亮的房间。
           </p>
         </div>
 
-        <div className="pointer-events-none absolute bottom-4 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 text-[9px] font-bold uppercase tracking-[0.18em] text-museum-muted">
+        <div className="pointer-events-none absolute bottom-4 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 text-ui-label uppercase text-museum-muted">
           <span>拖拽</span>
           <span className="h-px w-9 bg-museum-muted/55" />
           <span>查看</span>

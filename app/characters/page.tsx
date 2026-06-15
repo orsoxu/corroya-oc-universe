@@ -11,11 +11,11 @@ export default function CharactersPage() {
       <div className="grid gap-px overflow-hidden border border-museum-line bg-museum-line sm:grid-cols-3">
         {characters.map((character) => (
           <article key={character.name} className="bg-museum-paper p-6 sm:min-h-[310px] sm:p-8">
-            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-museum-muted">
+            <p className="text-ui-label uppercase text-museum-muted">
               {character.role}
             </p>
-            <h2 className="mt-8 font-display text-5xl leading-none">{character.name}</h2>
-            <p className="mt-8 text-sm leading-7 text-museum-muted">{character.note}</p>
+            <h2 className="mt-8 text-card-title">{character.name}</h2>
+            <p className="mt-8 text-muted-copy">{character.note}</p>
           </article>
         ))}
       </div>

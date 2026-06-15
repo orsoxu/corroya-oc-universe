@@ -52,10 +52,10 @@ export function WorldviewSection() {
     >
       <div className="mx-auto max-w-6xl">
         <div className="font-worldview mx-auto max-w-4xl">
-          <h1 className="worldview-title text-[clamp(2.35rem,5.8vw,5rem)] font-normal leading-[0.92] text-[color:var(--worldview-title-color)]">
+          <h1 className="worldview-title text-section-title text-[color:var(--worldview-title-color)]">
             世界观
           </h1>
-          <div className="mt-10 space-y-5 text-[clamp(1.25rem,2.45vw,2.5rem)] leading-[1.22] sm:mt-14 sm:space-y-7">
+          <div className="mt-10 space-y-5 text-[clamp(1.25rem,2vw,2rem)] leading-[1.5] sm:mt-14 sm:space-y-7">
             {lines.map((line) => (
               <p key={line} className="worldview-line">
                 {line}
