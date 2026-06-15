@@ -42,9 +42,6 @@ export function GalleryPage() {
     <main className="min-h-screen bg-museum-paper px-5 pb-24 pt-32 text-museum-ink sm:px-8 sm:pt-36">
       <section className="mx-auto grid max-w-[1500px] gap-10 lg:grid-cols-[280px_1fr] lg:gap-16">
         <aside className="lg:sticky lg:top-32 lg:h-[calc(100vh-9rem)] lg:self-start">
-          <p className="mb-6 text-[11px] font-bold tracking-[0.24em] text-museum-muted">
-            图集
-          </p>
           <h1 className="font-display text-[clamp(3rem,8vw,7.5rem)] leading-none tracking-[0.03em]">
             图集
           </h1>
